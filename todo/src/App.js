@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Form from './components/form';
 import List from './components/list';
 
-import { addTask, toggle } from './actions';
+import { addTask, toggleTask } from './actions';
 
 import './App.css';
 
@@ -13,10 +13,16 @@ class App extends React.Component {
     super();
     this.state = { tasks: [] };
   }
+
+  toggleHandler = (event, id) => {
+    event.preventDefault();
+    this.props.toggle(id);
+  };
+
   render() {
     return (
       <div className="App">
-        <TodoList list={this.props.todos} />
+        <TodoList list={this.props.todos} toggle={this.toggleHandler} />
         <TodoForm addTask={this.props.addTask} />
       </div>
     );
@@ -31,5 +37,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { addTask }
+  { addTask, toggleTask }
 )(App);
