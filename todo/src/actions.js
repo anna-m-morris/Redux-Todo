@@ -10,7 +10,7 @@ export const addTask = (task) =>{
 
 export const toggleTask = (id) =>{
     return{
-        type:TOGGLE_TASK;
+        type:TOGGLE_TASK,
         payload:id
     }
 }
