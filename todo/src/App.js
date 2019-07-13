@@ -1,12 +1,35 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import Form from './components/form';
+import List from './components/list';
+
+import { addTask, toggle } from './actions';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = { tasks: [] };
+  }
+  render() {
+    return (
+      <div className="App">
+        <TodoList list={this.props.todos} />
+        <TodoForm addTask={this.props.addTask} />
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    tasks: state.tasks
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { addTask }
+)(App);
