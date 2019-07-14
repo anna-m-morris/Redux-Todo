@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Form from './components/form';
-import List from './components/list';
+import TodoForm from './components/form';
+import TodoList from './components/list';
 
 import { addTask, toggleTask } from './actions';
 

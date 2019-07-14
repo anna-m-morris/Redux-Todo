@@ -1,6 +1,6 @@
 import { ADD_TASK, TOGGLE_TASK } from './actions';
 
-const initailState = {
+const initalState = {
   tasks: []
 };
 
