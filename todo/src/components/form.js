@@ -10,11 +10,12 @@ class TodoForm extends React.Component {
 
   changeHandler = event => {
     this.setState({
-      newtask: event.target.value
+      [event.target.name]: event.target.value
     });
   };
   addHandler = event => {
     event.preventDefault();
+    const {newTask}=this.state;
     this.props.addTask(this.state.newTask);
     this.setState({
       newTask: ''
@@ -28,8 +29,9 @@ class TodoForm extends React.Component {
           placeholder="What's next?"
           value={this.state.newTask}
           onChange={this.changeHandler}
+          name="newTask"
         />
-        <button>Add</button>
+        <button type="submit">Add</button>
       </form>
     );
   }
