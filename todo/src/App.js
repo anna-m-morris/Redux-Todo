@@ -22,8 +22,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <TodoList list={this.props.todos} toggle={this.toggleHandler} />
         <TodoForm addTask={this.props.addTask} />
+        <TodoList list={this.props.todos} toggle={this.toggleHandler} />
       </div>
     );
   }
