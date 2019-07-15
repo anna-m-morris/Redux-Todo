@@ -11,7 +11,7 @@ export const reducer = (state = initalState, action) => {
         ...state,
         tasks: [
           ...state.tasks,
-          { id: Date.now(), value: action.payload, comopleted: false }
+          { id: Date.now(), value: action.payload, completed: false }
         ]
       };
     case TOGGLE_TASK:

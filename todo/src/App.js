@@ -16,14 +16,14 @@ class App extends React.Component {
 
   toggleHandler = (event, id) => {
     event.preventDefault();
-    this.props.toggle(id);
+    this.props.toggleTask(id);
   };
 
   render() {
     return (
       <div className="App">
         <TodoForm addTask={this.props.addTask} />
-        <TodoList list={this.props.tasks} toggle={this.toggleHandler} />
+        <TodoList list={this.props.tasks} toggleTask={this.toggleHandler} />
       </div>
     );
   }
