@@ -15,7 +15,7 @@ class TodoForm extends React.Component {
   };
   addHandler = event => {
     event.preventDefault();
-    const {newTask}=this.state;
+    const { newTask } = this.state;
     this.props.addTask(this.state.newTask);
     this.setState({
       newTask: ''
@@ -36,4 +36,4 @@ class TodoForm extends React.Component {
     );
   }
 }
-export default TodoForm
+export default TodoForm;
